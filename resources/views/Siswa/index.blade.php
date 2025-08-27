@@ -137,7 +137,7 @@
                     <th># ID</th>
                     <th>NIS</th>
                     <th>NAMA SISWA</th>
-                    <th>PASSWORD</th>
+
                     <th>AKSI</th>
                 </tr>
             </thead>
@@ -147,7 +147,7 @@
                     <td>#{{ $item->id }}</td>
                     <td>{{ $item->nis }}</td>
                     <td>{{ $item->nama_siswa }}</td>
-                    <td>{{ $item->password }}</td>
+
                     <td>
                         <a href="{{ route('siswas.edit', $item->id) }}" class="action-btn edit-btn">Edit</a>
                         <form action="{{ route('siswas.destroy', $item->id) }}" method="POST" style="display:inline-block;">

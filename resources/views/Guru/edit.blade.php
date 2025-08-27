@@ -99,11 +99,7 @@
                 <div class="error">{{ $message }}</div>
             @enderror
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" value="" required>
-            @error('password')
-                <div class="error">{{ $message }}</div>
-            @enderror
+
 
             <button type="submit" class="edit-btn">Update Guru</button>
         </form>

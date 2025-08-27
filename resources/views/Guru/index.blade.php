@@ -137,7 +137,7 @@
                     <th># ID</th>
                     <th>NIP</th>
                     <th>NAMA GURU</th>
-                    <th>PASSWORD</th>
+
                     <th>AKSI</th>
                 </tr>
             </thead>
@@ -147,7 +147,7 @@
                     <td>#{{ $guru->id }}</td>
                     <td>{{ $guru->nip }}</td>
                     <td>{{ $guru->nama_guru }}</td>
-                    <td>{{ $guru->password }}</td>
+
                     <td>
                         <a href="{{ route('guru.edit', $guru->id) }}" class="action-btn edit-btn">Edit</a>
                         <form action="{{ route('guru.destroy', $guru->id) }}" method="POST" style="display:inline-block;">

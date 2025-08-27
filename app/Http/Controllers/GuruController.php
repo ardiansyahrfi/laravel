@@ -25,14 +25,12 @@ class GuruController extends Controller
         $request->validate([
             'nip' => 'required|unique:gurus,nip',
             'nama_guru' => 'required|string|max:255',
-            'password' => 'required|string|min:6',
         ]);
         Guru::create([
             'nip' => $request->input('nip'),
             'nama_guru' => $request->input('nama_guru'),
-            'password' => bcrypt($request->input('password')),
         ]);
-        return redirect('/')->with('success', 'Guru berhasil ditambahkan!');
+    return redirect()->route('guru.index')->with('success', 'Guru berhasil ditambahkan!');
     }
 
 
@@ -47,22 +45,20 @@ class GuruController extends Controller
         $request->validate([
             'nip' => 'required|unique:gurus,nip,' . $id,
             'nama_guru' => 'required|string|max:255',
-            'password' => 'required|string|min:6',
         ]);
         $guru = Guru::findOrFail($id);
         $guru->update([
             'nip' => $request->input('nip'),
             'nama_guru' => $request->input('nama_guru'),
-            'password' => bcrypt($request->input('password')),
         ]);
-        return redirect('/')->with('success', 'Guru berhasil diupdate!');
+    return redirect()->route('guru.index')->with('success', 'Guru berhasil diupdate!');
     }
 
     public function destroy($id)
     {
-        $guru = Guru::findOrFail($id);
-        $guru->delete();
-        return redirect('/')->with('success', 'Guru berhasil dihapus!');
+    $guru = Guru::findOrFail($id);
+    $guru->delete();
+    return redirect()->route('guru.index')->with('success', 'Guru berhasil dihapus!');
     }
 }
         $gurus = Guru::all();
